@@ -1,0 +1,3 @@
+This modified word2vec is intended to learn word embeddings using CBOW that are better for domain adaptation in NLP. The concept is to take in a list of words that is unique to some target domain. During training, each time the context window contains a word in that list, we ignore the word. By doing this, the embeddings learned for any given word is in relation to words that are common in multiple domains, i.e. not in the list of words that is to be ignored.
+
+The code is to be used similarly to word2vec, but an extra argument "-ignore rare_words.txt" is needed. rare_words.txt should contain the list of words that only occur in the target domain, with one word in each line.
